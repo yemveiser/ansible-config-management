@@ -50,8 +50,8 @@
   become: yes
   tasks:
     - name: change file to executable
-      ansible.builtin.file:
-        path: /var/lib/jenkins/workspace/Ansible/script.sh
+      file:
+        dest: /var/lib/jenkins/workspace/Ansible/script.sh
         state: file
         mode: a+x
 
@@ -62,6 +62,6 @@
     - name: Execute the command in remote shell; stdout goes to the specified file on the remote
       ansible.builtin.shell: script.sh
       args:
-        chdir: ./
+        chdir: /var/lib/jenkins/workspace/Ansible/
         executable: /bin/bash
 
