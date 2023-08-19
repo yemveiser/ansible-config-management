@@ -51,7 +51,7 @@
   tasks:
     - name: change file to executable
       ansible.builtin.file:
-        path: ./
+        path: ./script.sh
         state: file
         mode: a+x
 
