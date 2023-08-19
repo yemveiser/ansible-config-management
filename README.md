@@ -80,4 +80,10 @@ git add .
 
 git commit -m "commit message"
 ```
-![Ansible palybook](./i)
+![Ansible palybook](images/ansible_output.jpg)
+We can confirm the ansible playbook successfully executed the playbook scripts by confirming wireshack was installed on the target servers by inputing the command ``wireshark -v``.
+
+![Ansible_output](./images/ansible-version.png)
+
+This confirms we have been able to use ansible to deploy artifacts to target servers.
+
