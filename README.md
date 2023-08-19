@@ -71,3 +71,13 @@ lets also update our common.yaml file with the below code.
 
 ```
 
+
+let's commit and push the updated script to our git repository.
+```
+git status
+
+git add .
+
+git commit -m "commit message"
+```
+![Ansible palybook](./i)
