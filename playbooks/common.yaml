@@ -36,4 +36,32 @@
       ansible.builtin.file:
         path: /home/ubuntu/ansible_dir/ansible_file
         state: touch
- 
+
+- name: Change Timezone in Server
+  hosts: all
+  become: yes
+  tasks:
+    - name: set timezone to Africa/Lagos
+      timezone:
+        name: Africa/Lagos
+
+- name: change file to executable
+  hosts: all
+  become: yes
+  tasks:
+    - name: change file to executable
+      ansible.builtin.file:
+        path: ./
+        state: file
+        mode: a+x
+
+- name: Run a script and execute
+  hosts: all
+  become: yes
+  tasks:
+    - name: Execute the command in remote shell; stdout goes to the specified file on the remote
+      ansible.builtin.shell: script.sh
+      args:
+        chdir: ./
+        executable: /bin/bash
+
